@@ -1,0 +1,33 @@
+
+.movieDetailsItem {
+    display: flex;
+    margin: 15px;
+    padding: 0;
+}
+
+.mainInfo {
+    margin: 15px;
+}
+
+.genresItem {
+    display: inline-block;
+    list-style: none;
+    margin: 0;
+    padding: 10px;
+}
+
+.mainInfoListItem {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.goBackButton {
+    display: block;
+    border: 2px solid black;
+  border-radius: 5px;
+  color: black;
+  background-color: red;
+  padding: 8px 16px;
+  margin: 5px;
+}
