@@ -20,3 +20,7 @@ export const castRequest = (id) => {
         return axios.get(`${BASE_URL}movie/${id}/credits?api_key=${MyKey}`)
     
 }
+
+export const reviewsRequest = (id) => {
+    return axios.get(`${BASE_URL}movie/${id}/reviews?api_key=${MyKey}`)
+}

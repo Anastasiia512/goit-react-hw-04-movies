@@ -1,23 +1,26 @@
 import React, { Component } from 'react';
+import CastItem from '../../components/CastItem/index';
 import { castRequest } from '../../services/apiService';
 
-class Cast extends Component {
+export default class Cast extends Component {
   state = {
     cast: [],
   };
 
   componentDidMount() {
     const id = this.props.match.params.movieId;
-    castRequest(id).then(data => console.log(data));
+    castRequest(id)
+      .then(responce => this.setState({ cast: [...responce.data.cast] }))
+      .then(error => console.log(error));
   }
 
   render() {
     const { cast } = this.state;
+
     return (
       <>
-        <ul className="castList">{/* <CastItem cast={cast} /> */}</ul>
+        <ul className="castList">{cast && <CastItem cast={cast} />}</ul>
       </>
     );
   }
 }
-export default Cast;
