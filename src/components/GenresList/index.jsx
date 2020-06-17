@@ -1,4 +1,5 @@
 import React from 'react';
+import propTypes from 'prop-types';
 import './genresList.scss';
 
 const GenresList = ({ genres }) => (
@@ -14,5 +15,12 @@ const GenresList = ({ genres }) => (
   </ul>
   </>
 );
+
+GenresList.propTypes = {
+  genres: propTypes.arrayOf(propTypes.shape({
+    id: propTypes.number.isRequired,
+    name: propTypes.string.isRequired,
+  }))
+}
 
 export default GenresList;

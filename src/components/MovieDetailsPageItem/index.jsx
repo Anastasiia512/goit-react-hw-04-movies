@@ -1,6 +1,7 @@
 import React from 'react';
 import GenresList from '../../components/GenresList/index';
 import { Link, withRouter } from 'react-router-dom';
+import propTypes from 'prop-types';
 import './movieDetailsPageItem.scss';
 
 const BASE_URL_PIC = 'https://image.tmdb.org/t/p/w780';
@@ -26,7 +27,7 @@ const MovieDetailsPageItem = ({
         <GenresList genres={genres} />
       </div>
     </div>
-    <div className='infoList'>
+    <div className="infoList">
       <h3>Additional information</h3>
       <ul>
         <li>
@@ -39,5 +40,20 @@ const MovieDetailsPageItem = ({
     </div>
   </>
 );
+
+MovieDetailsPageItem.defaultProps = {
+  items: {},
+};
+
+MovieDetailsPageItem.propTypes = {
+  poster_path: propTypes.string,
+  title: propTypes.string,
+  release_date: propTypes.string,
+  popularity: propTypes.string,
+  overview: propTypes.string,
+  genres: propTypes.array,
+  onGoBack: propTypes.func.isRequired,
+  match: propTypes.object.isRequired,
+};
 
 export default withRouter(MovieDetailsPageItem);
